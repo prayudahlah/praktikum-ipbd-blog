@@ -9,7 +9,7 @@ class Blog(SQLModel, table=True):
     __tablename__ = "blogs"  # type: ignore
 
     id: Optional[int] = Field(default=None, primary_key=True)
-    title: str = Field(max_length=200)
+    title: str = Field(max_length=255)
     content: str
     user_id: int = Field(foreign_key="users.id")
 
